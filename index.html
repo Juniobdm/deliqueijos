@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliqueijos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #f8c471;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #e67e22;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+        }
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 550px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slideshow img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+    <script>
+        let slideIndex = 0;
+        function showSlides(offset) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            slideIndex = (slideIndex + offset + totalSlides) % totalSlides;
+            const offsetPercentage = -slideIndex * 100;
+            slides.style.transform = `translateX(${offsetPercentage}%)`;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('prev').addEventListener('click', () => showSlides(-1));
+            document.getElementById('next').addEventListener('click', () => showSlides(1));
+            setInterval(() => showSlides(1), 5000); // Troca a cada 5 segundos
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Deliqueijos</h1>
+        <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="slideshow">
+            <div class="slides">
+                <img src="https://via.placeholder.com/1200x300?text=Queijo+Coalho" alt="Queijo Coalho">
+                <img src="https://via.placeholder.com/1200x300?text=Queijo+Manteiga" alt="Queijo Manteiga">
+                <img src="https://via.placeholder.com/1200x300?text=Queijo+Ricota" alt="Queijo Ricota">
+                <img src="https://via.placeholder.com/1200x300?text=Queijo+Provolone" alt="Queijo Provolone">
+                <img src="https://via.placeholder.com/1200x300?text=Queijo+Prato" alt="Queijo Prato">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prev">&#10094; Anterior</button>
+                <button id="next">Próximo &#10095;</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Deliqueijos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
