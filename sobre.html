@@ -27,6 +27,7 @@
             justify-content: center;
             margin: 0;
             padding: 0;
+            flex-wrap: wrap; /* Flex-wrap para responsividade */
         }
         nav ul li {
             margin: 0 1rem;
@@ -49,6 +50,29 @@
             padding: 1rem;
             margin-top: 2rem;
         }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            main {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -67,7 +91,7 @@
     <main>
         <h2>Sobre Nós</h2>
         <p>
-            A **Deliqueijos** é uma empresa familiar que tem como missão levar o melhor do Nordeste para sua mesa. 
+            A <strong>Deliqueijos</strong> é uma empresa familiar que tem como missão levar o melhor do Nordeste para sua mesa. 
             Fundada com o propósito de oferecer queijos artesanais de alta qualidade, garantimos que cada produto 
             seja feito com carinho e dedicação, respeitando as tradições e sabores da nossa região.
         </p>
@@ -78,8 +102,8 @@
         </p>
         <p>
             Estamos localizados em São Paulo, mas trabalhamos diretamente com fornecedores do Nordeste e nossos produtos podem 
-			chegar a qualquer lugar do Brasil. Queremos que você experimente o verdadeiro sabor do Nordeste, 
-			não importa onde esteja!
+            chegar a qualquer lugar do Brasil. Queremos que você experimente o verdadeiro sabor do Nordeste, 
+            não importa onde esteja!
         </p>
     </main>
     <footer>
