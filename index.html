@@ -141,38 +141,35 @@
     </footer>
 
     <script>
-        // Seleção dos elementos do carrossel
-        const slides = document.querySelector('.slides');
-        const slideImages = document.querySelectorAll('.slideshow img');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-
         let currentIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
 
-        // Função para mostrar a imagem com base no índice
-        function updateSlidePosition() {
-            const slideWidth = slideImages[0].clientWidth;
-            slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        function showSlide(index) {
+            const slideWidth = slides[0].clientWidth;
+            const slidesContainer = document.querySelector('.slides');
+            slidesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
         }
 
-        // Função para mover para o próximo slide
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % slideImages.length;
-            updateSlidePosition();
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
         }
 
-        // Função para mover para o slide anterior
         function prevSlide() {
-            currentIndex = (currentIndex - 1 + slideImages.length) % slideImages.length;
-            updateSlidePosition();
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
         }
 
-        // Evento de clique nos botões
-        nextButton.addEventListener('click', nextSlide);
-        prevButton.addEventListener('click', prevSlide);
+        // Event listeners for the buttons
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
 
-        // Inicialização do carrossel
-        updateSlidePosition();
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initial display
+        showSlide(currentIndex);
     </script>
 </body>
 </html>
