@@ -15,7 +15,37 @@
             background-color: #f8c471;
             color: #fff;
             padding: 1rem;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center;
             text-align: center;
+            position: relative; /* Necessário para o posicionamento do banner */
+            background-image: url('https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/banner.png'); /* URL do banner */
+            background-size: cover; /* Faz o banner cobrir toda a área */
+            background-position: center; /* Centraliza o banner */
+            height: 150px; /* Altura ajustada para mais espaço */
+            overflow: hidden; /* Garante que o banner seja cortado se ultrapassar a altura */
+        }
+        header div {
+            display: flex; /* Exibe logo e texto lado a lado */
+            align-items: center; /* Alinha verticalmente */
+        }
+        header img {
+            max-width: 150px; /* Aumenta o tamanho do logo */
+            margin-right: 15px; /* Espaçamento entre logo e texto */
+        }
+        header h1 {
+            margin: 0;
+        }
+        header p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        /* Ajuste para exibir o título e subtítulo em 2 linhas */
+        header div > div {
+            display: flex;
+            flex-direction: column; /* Organiza o texto em duas linhas */
+            align-items: flex-start; /* Alinha o conteúdo à esquerda */
         }
         nav {
             background-color: #e67e22;
@@ -27,7 +57,7 @@
             justify-content: center;
             margin: 0;
             padding: 0;
-            flex-wrap: wrap; /* Adicionando flex-wrap para flexibilidade */
+            flex-wrap: wrap;
         }
         nav ul li {
             margin: 0 1rem;
@@ -105,13 +135,23 @@
             .slideshow {
                 height: 250px;
             }
+            header img {
+                max-width: 120px; /* Reduz tamanho do logo em telas pequenas */
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Deliqueijos</h1>
-        <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+        <div>
+            <!-- Logo da empresa à esquerda -->
+            <img src="https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/deliqueijos-bg.png" alt="Logo Deliqueijos">
+            <div>
+                <!-- Título e subtítulo em duas linhas, alinhados à esquerda -->
+                <h1>Deliqueijos</h1>
+                <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+            </div>
+        </div>
     </header>
     <nav>
         <ul>
