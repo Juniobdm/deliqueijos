@@ -3,141 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deliqueijos - Produtos</title>
+    <title>Contato - Deliqueijos: Queijos Artesanais do Nordeste</title>
+    <!-- Fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Definindo as cores principais */
+        :root {
+            --amarelo-queijo: #F9C74F;
+            --creme-suave: #FFF5E3;
+            --marrom-rustico: #8D6E63;
+            --branco-puro: #FFFFFF;
+            --cinza-notepad: #f4f4f4;
+        }
+
+        /* Estilos globais */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--creme-suave);
+            color: var(--marrom-rustico);
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
         }
+
+        /* Header */
         header {
-            background-color: #f8c471;
-            color: #fff;
-            padding: 1rem;
+            background-color: var(--amarelo-queijo);
+            padding: 2rem 3rem;
             text-align: center;
-        }
-        nav {
-            background-color: #e67e22;
-            padding: 0.5rem;
-        }
-        nav ul {
-            list-style: none;
+            color: var(--branco-puro);
             display: flex;
             justify-content: center;
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap; /* Flex-wrap para responsividade */
+            align-items: center;
         }
+
+        header .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header img {
+            max-width: 150px;
+            border-radius: 10px;
+        }
+
+        header div > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: var(--marrom-rustico);
+            color: var(--branco-puro);
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
         nav ul li {
             margin: 0 1rem;
+            position: relative;
         }
+
         nav ul li a {
-            color: #fff;
+            color: var(--branco-puro);
             text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
-            gap: 1rem;
-        }
-        .product-card {
-            background-color: #fff;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
         }
-        .product-card h3 {
-            margin: 1rem 0;
-            color: #e67e22;
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: var(--amarelo-queijo);
         }
-        .product-card p {
-            color: #333;
+
+        /* Menu em telas pequenas */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: var(--marrom-rustico);
+                color: var(--branco-puro);
+                padding: 1rem;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1.5rem;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                border: none;
+                z-index: 999;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
         }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            nav ul {
+                display: flex !important;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+        }
+
+        /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: #fff;
+            background-color: var(--marrom-rustico);
+            color: var(--branco-puro);
             text-align: center;
             padding: 1rem;
-            margin-top: 2rem;
         }
 
-        /* Media Queries para responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            nav ul {
-                flex-direction: column;
-            }
+        footer p {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.2rem;
-            }
-            nav ul li {
-                margin: 0.5rem 0;
-            }
+        /* Estilo para o texto sobre a empresa */
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        main p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Estilo para o bloco de contato sem fundo e com a mesma fonte do site */
+        .contact-info {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            /* Remover o white-space: pre-wrap para não quebrar o texto */
+        }
+
+        /* Estilo para os ícones de redes sociais */
+        .social-links a {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: var(--marrom-rustico);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--amarelo-queijo);
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Alterações para organizar as imagens em grade */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria uma grade responsiva */
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+			margin-bottom: 0; /* Remove o espaçamento inferior do título */
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 0rem;
+        }
+
+        .product p {
+            text-align: center;
+			margin: 0; /* Remove os espaçamentos externos */
+            line-height: 1.5; /* Altura da linha mínima para textos colados */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Deliqueijos</h1>
-        <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+        <div class="content">
+            <img src="https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/deliqueijos-bg.png" alt="Logo Deliqueijos">
+            <div>
+                <h1>Deliqueijos</h1>
+                <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+            </div>
+        </div>
     </header>
     <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"">Home</a></li>
             <li><a href="produtos.html" class="active">Produtos</a></li>
             <li><a href="sobre.html">Sobre Nós</a></li>
             <li><a href="contato.html">Contato</a></li>
         </ul>
     </nav>
     <main>
-        <h2>Produtos</h2>
-        <p>Confira nossa seleção de queijos artesanais fresquinhos diretamente do Nordeste!</p>
-        <div class="product-list">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x250?text=Queijo+Coalho" alt="Queijo Coalho">
+        <h2>Nossos Produtos</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Queijo Coalho">
                 <h3>Queijo Coalho</h3>
-                <p>O queijo coalho é um clássico nordestino, ideal para grelhar e saborear com um bom vinho!</p>
+                <p>Tradicional e saboroso.</p>
+                <p><strong>R$ 67,00/kg</strong></p>
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x250?text=Queijo+Manteiga" alt="Queijo Manteiga">
-                <h3>Queijo Manteiga</h3>
-                <p>Macio e cremoso, o queijo manteiga é perfeito para acompanhar pães e frutas frescas.</p>
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Queijo Manteiga">
+                <h3>Manteiga de garrafa</h3>
+                <p>Cremoso e irresistível.</p>
+                <p><strong>R$ 70,00/kg</strong></p>
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x250?text=Queijo+Ricota" alt="Queijo Ricota">
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Queijo Ricota">
                 <h3>Queijo Ricota</h3>
-                <p>Leve e saboroso, o queijo ricota é excelente em receitas e saladas frescas.</p>
+                <p>Leve e saudável.</p>
+                <p><strong>R$ 70,00/kg</strong></p>
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x250?text=Queijo+Provolone" alt="Queijo Provolone">
-                <h3>Queijo Provolone</h3>
-                <p>O queijo provolone tem um sabor defumado inconfundível, ideal para petiscos e pizzas.</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x250?text=Queijo+Prato" alt="Queijo Prato">
-                <h3>Queijo Prato</h3>
-                <p>Versátil e saboroso, o queijo prato é ótimo para sanduíches, lasanhas e até petiscos.</p>
-            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Queijo Ricota">
+                <h3>Mel</h3>
+                <p>Doce e saudável.</p>
+                <p><strong>R$ 70,00/kg</strong></p>
+            </div>			
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="Queijo Ricota">
+                <h3>Requeijão</h3>
+                <p>Cremoso e irresistível.</p>
+                <p><strong>R$ 70,00/kg</strong></p>
+            </div>			
         </div>
     </main>
     <footer>
         <p>&copy; 2024 Deliqueijos. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Menu Toggle Script
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
