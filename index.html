@@ -97,6 +97,10 @@
             background-color: var(--creme-suave);
         }
 
+        nav ul li a.active {
+            background-color: var(--amarelo-queijo);
+        }
+
         /* Menu em telas pequenas */
         @media (max-width: 768px) {
             nav ul {
@@ -284,6 +288,16 @@
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
         }
+
+        // Adiciona a classe 'active' ao link correspondente à página atual
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
