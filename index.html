@@ -181,13 +181,16 @@
             color: var(--branco-puro);
             text-align: center;
             padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999; /* Garante que o footer fique acima de outros elementos */
         }
 
-        footer p {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
+        main {
+            padding-bottom: 60px; /* Espaço suficiente para o footer não cobrir o conteúdo */
         }
-
     </style>
 </head>
 <body>
