@@ -30,7 +30,7 @@
         /* Header */
         header {
             background-color: var(--amarelo-queijo);
-            padding: 2rem 3rem;
+            padding: 0.5rem;
             text-align: center;
             color: var(--branco-puro);
             display: flex;
@@ -155,17 +155,21 @@
             }
         }
 
-        /* Footer */
+                /* Footer */
         footer {
             background-color: var(--marrom-rustico);
             color: var(--branco-puro);
             text-align: center;
-            padding: 1rem;
+            padding: 0.1rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999; /* Garante que o footer fique acima de outros elementos */
         }
 
-        footer p {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
+        main {
+            padding-bottom: 60px; /* Espaço suficiente para o footer não cobrir o conteúdo */
         }
 
         /* Estilo para o texto sobre a empresa */
@@ -201,7 +205,7 @@
         /* Estilo para os ícones de redes sociais */
         .social-links a {
             font-size: 2rem;
-            margin: 0 15px;
+            margin: 2 15px;
             color: var(--marrom-rustico);
             text-decoration: none;
             transition: color 0.3s ease;
@@ -214,6 +218,32 @@
         .social-links {
             text-align: center;
             margin-top: 1rem;
+        }
+
+        /* Alterações para organizar as imagens em grade */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria uma grade responsiva */
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+			margin-bottom: 0; /* Remove o espaçamento inferior do título */
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 0rem;
+        }
+
+        .product p {
+            text-align: center;
+			margin: 0; /* Remove os espaçamentos externos */
+            line-height: 1.5; /* Altura da linha mínima para textos colados */
         }
     </style>
 </head>
