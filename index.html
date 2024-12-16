@@ -6,6 +6,278 @@
     <title>Deliqueijos</title>
     <!-- Fontes do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Link para o CSS do Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <style>
+        /* Definindo as cores principais */
+        :root {
+            --amarelo-queijo: #F9C74F;
+            --creme-suave: #FFF5E3;
+            --marrom-rustico: #8D6E63;
+            --branco-puro: #FFFFFF;
+        }
+
+        /* Estilos globais */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--creme-suave);
+            color: var(--marrom-rustico);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--amarelo-queijo);
+            padding: 2rem 3rem;
+            text-align: center;
+            color: var(--branco-puro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header img {
+            max-width: 150px;
+            border-radius: 10px;
+        }
+
+        header div > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: var(--marrom-rustico);
+            color: var(--branco-puro);
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--branco-puro);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--creme-suave);
+        }
+
+        nav ul li a.active {
+            background-color: var(--amarelo-queijo);
+        }
+
+        /* Menu em telas pequenas */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: var(--marrom-rustico);
+                color: var(--branco-puro);
+                padding: 1rem;
+                text-align: center;
+                cursor: pointer;
+                font-size: 1.5rem;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                border: none;
+                z-index: 999;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            nav ul {
+                display: flex !important;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            nav ul li a {
+                text-align: center;
+            }
+        }
+
+        /* Slideshow */
+        .swiper-container {
+            width: 100%;
+            max-width: 800px; /* Largura ajustada */
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .swiper-slide img {
+            width: 100%; /* Ajusta cada imagem para ocupar toda a largura do slideshow */
+            height: 100%;
+            object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--marrom-rustico);
+            color: var(--branco-puro);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <img src="https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/deliqueijos-bg.png" alt="Logo Deliqueijos">
+            <div>
+                <h1>Deliqueijos</h1>
+                <p>Delícias frescas diretamente do Nordeste para sua mesa!</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/%40Queijo_Coalho.png" alt="Queijo Coalho">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/1200x500?text=Queijo+Prato" alt="Queijo Prato">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://raw.githubusercontent.com/Juniobdm/deliqueijos/main/%40Queijo_Coalho.png" alt="Queijo Coalho">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://via.placeholder.com/1300x600?text=Queijo+Prato" alt="Queijo Prato">
+                </div>
+            </div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Deliqueijos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        // Inicializando o Swiper
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1, // Mostrar uma imagem por vez
+            spaceBetween: 10, // Espaçamento entre as imagens
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000, // Troca de imagem a cada 5 segundos
+            },
+            loop: true, // Vai para o primeiro slide quando chega no último
+        });
+
+        // Menu Toggle Script
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Adiciona a classe 'active' ao link correspondente à página atual
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliqueijos</title>
+    <!-- Fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <style>
         /* Definindo as cores principais */
         :root {
