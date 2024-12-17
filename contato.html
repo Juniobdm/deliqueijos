@@ -75,6 +75,7 @@
             background-color: var(--marrom-rustico);
             color: var(--branco-puro);
             position: relative;
+            z-index: 1000; /* Garantir que o menu fique por cima de outros elementos */
         }
 
         nav ul {
@@ -135,9 +136,9 @@
                 display: flex;
             }
 
-            /* Ajustando a margem superior do conteúdo */
+            /* Ajuste para garantir que o conteúdo não fique em cima do menu hamburguer */
             main {
-                margin-top: 120px; /* Aumentei a margem superior para garantir mais espaço em telas pequenas */
+                padding-top: 120px; /* Espaço suficiente para não sobrepor o menu */
             }
         }
 
@@ -186,11 +187,11 @@
             line-height: 1.8;
         }
 
-		main h2 {
-			text-align: left;
-			font-size: 2rem;
-			margin-bottom: -2rem; /* Ajuste o valor conforme necessário */
-		}
+        main h2 {
+            text-align: left;
+            font-size: 2rem;
+            margin-bottom: -2rem; /* Ajuste o valor conforme necessário */
+        }
 
         main p {
             font-size: 1.2rem;
@@ -201,13 +202,13 @@
         }
 
         /* Estilo para o bloco de contato sem fundo e com a mesma fonte do site */
-		.contact-info {
-			font-family: 'Open Sans', sans-serif;
-			line-height: 1.8;
-			font-size: 1.1rem;
-			margin-top: 0.5rem; /* Ajuste a margem superior para reduzir o espaçamento */
-			margin-bottom: 1rem; /* Ajuste a margem inferior se necessário */
-		}
+        .contact-info {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-top: 0.5rem; /* Ajuste a margem superior para reduzir o espaçamento */
+            margin-bottom: 1rem; /* Ajuste a margem inferior se necessário */
+        }
 
         /* Estilo para os ícones de redes sociais */
         .social-links a {
