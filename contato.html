@@ -197,7 +197,7 @@
             font-size: 1.2rem;
             margin: 0; /* Removendo margens do parágrafo */
             line-height: 1; /* Ajuste o espaçamento entre as linhas */
-			margin-top: 4rem;
+            margin-top: 4rem;
             margin-bottom: 1.5rem;
             text-align: center; /* Centraliza o texto */
         }
@@ -260,23 +260,69 @@
             margin-top: -3rem; /* Ajuste de margem para mover o mapa para cima */
         }
 
+        /* Estilos para o formulário */
+        .contact-form {
+            background-color: var(--cinza-notepad);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin-top: 2rem; /* Espaço para separar do conteúdo anterior */
+            padding-bottom: 2rem; /* Espaço adicional no fundo */
+            position: relative;
+            z-index: 10;
+            margin-left: auto; /* Centraliza à esquerda */
+            margin-right: auto; /* Centraliza à direita */
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 98%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: var(--amarelo-queijo);
+            color: var(--branco-puro);
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: var(--marrom-rustico);
+        }
+
         /* Responsividade para telas pequenas */
         @media (max-width: 768px) {
             .contact-container {
-                flex-direction: column;
+                flex-direction: column; /* Em telas pequenas, exibe as informações acima do mapa */
+                align-items: center; /* Alinha as colunas de forma centralizada */
             }
 
-            .contact-column, .map-column {
-                width: 100%; /* As colunas ocupam toda a largura em telas pequenas */
-                margin-bottom: 2rem;
+            .contact-column {
+                width: 100%; /* Ocupa 100% da largura para as informações de contato e redes sociais */
+                margin-bottom: 2rem; /* Espaço entre as seções */
             }
 
             .map-column {
-                height: 400px; /* Ajuste da altura do mapa em telas pequenas */
-            }
-
-            .social-links {
-                margin-bottom: 2rem; /* Espaçamento entre as redes sociais e o mapa */
+                width: 100%; /* Mapa ocupa 100% da largura em telas pequenas */
+                height: 300px; /* Manter a altura do mapa */
+                margin-top: 0; /* Remove a margem superior para um melhor alinhamento */
             }
         }
     </style>
@@ -324,12 +370,31 @@
                 </div>
             </div>
             <div class="map-column">
-                <!-- Google Maps Embed -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7801890514926!2d-46.63212685031994!3d-23.634045681375944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5962c2336b9d%3A0x5362cbe11db27eaf!2sRua%20dos%20Queijos%2C%20123%20-%20Vila%20Dumont%2C%20São%20Paulo%20-%20SP%2C%2008620-000!5e0!3m2!1spt-BR!2sbr!4v1672897672977!5m2!1spt-BR!2sbr" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7801890514926!2d-46.63212685031994!3d-23.634045681375944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5962c2336b9d%3A0x5362cbe11db27eaf!2sRua%20dos%20Queijos%2C%20123%20-%20Vila%20Dumont%2C%20São%20Paulo%20-%20SP%2C%2008620-000!5e0!3m2!1spt-BR!2sbr!4v1672897672977!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </main>
+
+    <!-- Formulário no final -->
+    <div class="contact-form">
+        <h3>Envie-nos uma mensagem</h3>
+        <form action="mailto:contato@deliqueijos.com" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="assunto">Assunto:</label>
+            <input type="text" id="assunto" name="assunto" required><br>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
     <footer>
         <p>&copy; 2024 Deliqueijos. Todos os direitos reservados.</p>
     </footer>
