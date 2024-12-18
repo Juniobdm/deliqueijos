@@ -257,7 +257,7 @@
             width: 48%; /* Ocupa metade da largura */
             height: 300px; /* Definir altura fixa para o mapa */
             position: relative;
-            margin-top: -3rem; /* Ajuste de margem para mover o mapa para cima */
+            margin-top: 0rem; /* Ajuste de margem para mover o mapa para cima */
         }
 
         /* Estilos para o formulário */
@@ -307,6 +307,20 @@
             background-color: var(--marrom-rustico);
         }
 
+        /* Alinhando os títulos "Estamos Localizados em" e "Contato" na mesma linha */
+        .contact-titles {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .contact-titles h3 {
+            font-size: 2rem; /* Tamanho uniforme */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
         /* Responsividade para telas pequenas */
         @media (max-width: 768px) {
             .contact-container {
@@ -323,6 +337,12 @@
                 width: 100%; /* Mapa ocupa 100% da largura em telas pequenas */
                 height: 300px; /* Manter a altura do mapa */
                 margin-top: 0; /* Remove a margem superior para um melhor alinhamento */
+                margin-bottom: 2rem; /* Espaço entre as seções */				
+            }
+
+            .contact-titles {
+                flex-direction: column;
+                align-items: center; /* Títulos alinhados centralmente em telas pequenas */
             }
         }
     </style>
@@ -348,9 +368,18 @@
     </nav>
     <main>
         <p>Estamos sempre à disposição para atender você! Entre em contato por qualquer um dos meios abaixo:</p>
-        <h2>Contato</h2>
         <div class="contact-container">
+            <!-- Troquei as posições de contato e mapa -->
+            <div class="map-column">
+                <div class="contact-titles">
+                    <h3>Estamos Localizados em</h3>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7801890514926!2d-46.63212685031994!3d-23.634045681375944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5962c2336b9d%3A0x5362cbe11db27eaf!2sRua%20dos%20Queijos%2C%20123%20-%20Vila%20Dumont%2C%20São%20Paulo%20-%20SP%2C%2008620-000!5e0!3m2!1spt-BR!2sbr!4v1672897672977!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
             <div class="contact-column">
+                <div class="contact-titles">
+                    <h3>Contato</h3>
+                </div>
                 <div class="contact-info">
                     Email: contato@deliqueijos.com<br>
                     Telefone: (11) 99999-9999<br>
@@ -369,28 +398,19 @@
                     </a>
                 </div>
             </div>
-            <div class="map-column">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7801890514926!2d-46.63212685031994!3d-23.634045681375944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5962c2336b9d%3A0x5362cbe11db27eaf!2sRua%20dos%20Queijos%2C%20123%20-%20Vila%20Dumont%2C%20São%20Paulo%20-%20SP%2C%2008620-000!5e0!3m2!1spt-BR!2sbr!4v1672897672977!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
         </div>
     </main>
 
-    <!-- Formulário no final -->
+    <!-- Formulário de contato -->
     <div class="contact-form">
-        <h3>Envie-nos uma mensagem</h3>
-        <form action="mailto:contato@deliqueijos.com" method="post" enctype="multipart/form-data">
+        <h2>Entre em contato</h2>
+        <form action="#" method="POST">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
-
+            <input type="text" id="nome" name="nome" required>
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="assunto">Assunto:</label>
-            <input type="text" id="assunto" name="assunto" required><br>
-
+            <input type="email" id="email" name="email" required>
             <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
-
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
             <input type="submit" value="Enviar">
         </form>
     </div>
@@ -400,10 +420,9 @@
     </footer>
 
     <script>
-        // Menu Toggle Script
         function toggleMenu() {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('active');
+            var menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
         }
     </script>
 </body>
