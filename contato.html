@@ -300,17 +300,20 @@
             .contact-column {
                 width: 100%; /* Ocupa 100% da largura para as informações de contato e redes sociais */
                 margin-bottom: 2rem; /* Espaço entre as seções */
+                order: 2; /* Coloca "Contatos" após o título */
             }
 
             .map-column {
                 width: 100%; /* Mapa ocupa 100% da largura em telas pequenas */
                 height: 300px; /* Manter a altura do mapa */
+                order: 4; /* Coloca o mapa 4 */
                 margin-top: 0; /* Remove a margem superior para um melhor alinhamento */
                 margin-bottom: 3rem; /* Espaço entre as seções */				
             }
 
             .contact-form {
 				width: 80%; /* Ajuste a largura para 90% em telas pequenas */
+                order: 5; /* Coloca "Formulário" em 5 */
             }
 			
 			.contact-form input, .contact-form textarea {
@@ -319,33 +322,56 @@
 				margin-bottom: 1rem;
 				border: 1px solid #ccc;
 				border-radius: 4px;
-			}			
+			}
+
+			.social-links h3 {
+				margin-bottom: 0px;  /* Ajuste a margem inferior do título */
+				font-size: 1.6rem;    /* Tamanho uniforme do título */
+			}
 			
 			.social-links {
 				text-align: center;
 				font-size: 1.6rem; /* Tamanho uniforme */
 				font-family: 'Poppins', sans-serif;
-				width: 80%;
-				padding: 0rem;
+				width: 100%;
+                order: 3; /* Coloca "Redes sociais" após o Contatos */
+				padding: 0;
 				margin-bottom: -5rem;
+			}
+			
+			.social-links a {
+				font-size: 2rem;
+				margin: 0 10;  /* Aumentando o espaçamento entre os ícones */
+				color: var(--marrom-rustico);
+				text-decoration: none;
+				padding-top: 0;
+				transition: color 0.3s ease;
 			}
 
 			.contact-titles h3 {
 				text-align: center;
 				font-size: 2rem; /* Tamanho uniforme */
 				font-family: 'Poppins', sans-serif;
-				width: 70%;
+				width: 100%;
 				padding: 0rem;
-				margin-bottom: 1rem;
+				margin-bottom: -2rem;
             }
 
 			.Location-titles h3 {
-				text-align: left;
+				text-align: center;
 				font-size: 2rem; /* Tamanho uniforme */
 				font-family: 'Poppins', sans-serif;
 				padding: 0rem;
 				margin-bottom: 0rem;
             }
+			
+			.contact-info {
+				text-align: left;
+				font-size: 1rem; /* Tamanho uniforme */
+				width: 100%;
+				padding: 3rem;
+				margin-bottom: -2rem;
+			}			
         }
 
  </style>
@@ -386,7 +412,8 @@
                 <div class="contact-info">
                     Email: contato@deliqueijos.com<br>
                     Telefone: (11) 99999-9999<br>
-                    Endereço: Rua dos Queijos, 123 - São Paulo, SP
+                    Endereço: Rua dos Queijos, 123<br>
+					São Paulo, SP
                 </div>
                 <div class="social-links">
                     <h3>Redes Sociais</h3>
